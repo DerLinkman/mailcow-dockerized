@@ -1,0 +1,35 @@
+name: Check if labeled support, if so send message and close issue
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  add-comment:
+    if: github.event.label.name == 'support'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add comment
+        run: gh issue comment "$NUMBER" --body "$BODY"
+        env:
+          GH_TOKEN: ${{ secrets.SUPPORTISSUES_ACTION_PAT }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: |
+              It seems your issue is not a bug.
+              Therefore we highly advise you to get support!
+              
+              You can get support either by:
+              - ordering a paid [support contract at Servercow](https://www.servercow.de/mailcow?lang=en#support/) (Directly from the developers)
+              - using the [community forum](https://community.mailcow.email) (**Based on volunteers! NO guaranteed answer**)
+              - using the [Telegram support channel](https://t.me/mailcow) (**Based on volunteers! NO guaranteed answer**)
+
+              This issue will be closed. If you think your case is not a support case feel free to comment above.
+
+      - name: Close issue
+        env:
+          GH_TOKEN: ${{ secrets.SUPPORTISSUES_ACTION_PAT }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: gh issue close "$NUMBER" -r "not planned"
