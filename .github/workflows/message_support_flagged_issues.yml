@@ -17,7 +17,7 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           BODY: |
-              ## THIS IS A AUTOMATED MESSAGE!
+              **THIS IS A AUTOMATED MESSAGE!**
 
               It seems your issue is not a bug.
               Therefore we highly advise you to get support!
