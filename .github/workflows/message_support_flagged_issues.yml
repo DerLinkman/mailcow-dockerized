@@ -17,6 +17,8 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           BODY: |
+              ## THIS IS A AUTOMATED MESSAGE!
+              
               It seems your issue is not a bug.
               Therefore we highly advise you to get support!
               
@@ -25,7 +27,7 @@ jobs:
               - using the [community forum](https://community.mailcow.email) (**Based on volunteers! NO guaranteed answer**)
               - using the [Telegram support channel](https://t.me/mailcow) (**Based on volunteers! NO guaranteed answer**)
 
-              This issue will be closed. If you think your case is not a support case feel free to comment above.
+              This issue will be closed. If you think your reported issue is not a support case feel free to comment above and if so the issue will reopened.
 
       - name: Close issue
         env:
