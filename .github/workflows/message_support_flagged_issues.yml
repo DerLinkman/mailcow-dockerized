@@ -18,13 +18,13 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           BODY: |
               ## THIS IS A AUTOMATED MESSAGE!
-              
+
               It seems your issue is not a bug.
               Therefore we highly advise you to get support!
               
               You can get support either by:
-              - ordering a paid [support contract at Servercow](https://www.servercow.de/mailcow?lang=en#support/) (Directly from the developers)
-              - using the [community forum](https://community.mailcow.email) (**Based on volunteers! NO guaranteed answer**)
+              - ordering a paid [support contract at Servercow](https://www.servercow.de/mailcow?lang=en#support/) (Directly from the developers) or
+              - using the [community forum](https://community.mailcow.email) (**Based on volunteers! NO guaranteed answer**) or
               - using the [Telegram support channel](https://t.me/mailcow) (**Based on volunteers! NO guaranteed answer**)
 
               This issue will be closed. If you think your reported issue is not a support case feel free to comment above and if so the issue will reopened.
